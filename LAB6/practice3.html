@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EECS 348 LAB 6</title>
+</head>
+<body>
+
+    First Password: <input type="password" id="pass1"><br>
+    Second Password: <input type="password" id="pass2"><br>
+    
+    <button onclick="validatePasswords()">Validate Your Passwords</button>
+
+    <script>
+        function validatePasswords() {
+            
+            const p1 = document.getElementById('pass1').value;
+            const p2 = document.getElementById('pass2').value;
+
+            if (p1.length < 8) { //checks for min length
+                alert("Error: Password must be at minimum 8 characters long.");
+            } 
+            else if (p1 !== p2) { //checks to see if passwords match
+                alert("Error: Passwords do not match.");
+            } 
+            else {
+                alert("Success: The two passwords matched!");
+            }
+        }
+    </script>
+
+</body>
+</html>

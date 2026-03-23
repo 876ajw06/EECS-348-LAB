@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EECS 348 LAB 6</title>
+    <style>
+        #target-paragraph {
+            border: 5px solid black; /*defaults for border */
+            margin-bottom: 20px; 
+
+        }
+    </style>
+</head>
+<body>
+
+    <p id="target-paragraph">
+        When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton
+
+    </p>
+
+    Red(0-255): <input type="text" id="border-r"><br>
+    Green(0-255): <input type="text" id="border-g"><br>
+    Blue(0-255): <input type="text" id="border-b"><br>
+    Width: <input type="text" id="border-w"><br>
+
+    <button onclick="applyStyles()">Change the color!</button>
+
+    <script>
+        function applyStyles() { //gets info from text fields and applies it to the border
+
+            const borderR = document.getElementById('border-r').value;
+            const borderG = document.getElementById('border-g').value;
+            const borderB = document.getElementById('border-b').value;
+            const borderW = document.getElementById('border-w').value;
+           
+            const paragraph = document.getElementById('target-paragraph');
+
+            
+            if (borderR !== "" && borderG !== "" && borderB !== "") {//applies styles when button is clicked, makes sure to update only if there is info provided
+                paragraph.style.borderColor = `rgb(${borderR}, ${borderG}, ${borderB})`;
+            }
+
+            if (borderW !== "") {
+                paragraph.style.borderWidth = `${borderW}px`;
+            }
+
+            if (bgR !== "" && bgG !== "" && bgB !== "") {
+                paragraph.style.backgroundColor = 'rgb(${bgR}, ${bgG}, ${bgB})'; //passes in a string into backgroundColor
+        }
+    }
+    </script>
+
+</body>
+</html>
